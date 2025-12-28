@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Eshan Singh | Data Science & AI Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0f172a; --card: #111827; --primary: #38bdf8; --secondary: #22c55e;
+  --text: #e5e7eb; --muted: #9ca3af;
+}
+[data-theme="light"] {
+  --bg: #f9fafb; --card: #ffffff; --primary: #3b82f6; --secondary: #16a34a;
+  --text: #111827; --muted: #6b7280;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; font-family: 'Inter', sans-serif; background: var(--bg);
+  color: var(--text); line-height: 1.6; transition: background .3s,color .3s;
+  overflow-x: hidden; position: relative;
+}
+canvas#bgCanvas {
+  position: fixed; top: 0; left: 0; z-index: -1;
+}
+header { padding: 4rem 2rem; text-align: center; position: relative; z-index:1; }
+header h1 { font-size: 3rem; margin-bottom: .5rem; }
+header span { color: var(--primary); }
+header p { max-width: 800px; margin: auto; color: var(--muted); min-height: 24px; }
+nav { display: flex; justify-content: center; gap: 1.5rem; margin-top:2rem; flex-wrap:wrap; }
+nav a { color: var(--text); text-decoration:none; font-weight:500; position:relative; transition:color .3s; }
+nav a::after { content:''; position:absolute; width:0; height:2px; bottom:-4px; left:0; background:var(--primary); transition:width .3s; }
+nav a:hover::after { width:100%; }
+nav a.active { color: var(--secondary); font-weight:700; }
+
+.theme-toggle { position:absolute; top:2rem; right:2rem; background:var(--card); color:var(--text);
+border:none; padding:.5rem 1rem; border-radius:8px; cursor:pointer; box-shadow:0 4px 8px rgba(0,0,0,.2);
+transition:background .3s,color .3s; z-index:2; }
+
+section { max-width:1100px; margin:4rem auto; padding:0 2rem; position:relative; z-index:1; }
+h2 { font-size:2rem; margin-bottom:1.5rem; color: var(--primary); }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem; }
+.card {
+  background: rgba(17,24,39,0.85); border-radius:14px; padding:1.5rem; backdrop-filter: blur(10px);
+  transform:translateY(30px); opacity:0; transition: transform .6s ease-out, opacity .6s ease-out, box-shadow .3s, background .3s,color .3s;
+}
+[data-theme="light"] .card { background: rgba(255,255,255,0.85); }
+.card.show { opacity:1; transform:translateY(0); }
+.card:hover { transform:translateY(-6px); box-shadow:0 20px 40px rgba(0,0,0,.4); }
+.card:hover h3 { transform:translateY(-5px); transition: transform .3s; }
+.card:hover p { color:var(--secondary); transition:color .3s; }
+.card h3 { margin-top:0; color: var(--secondary); }
+.tag { display:inline-block; background: rgba(56,189,248,.15); color:var(--primary);
+padding:.25rem .6rem; border-radius:999px; font-size:.75rem; margin:.25rem .25rem 0 0; transition: transform .2s; }
+.tag:hover { transform:scale(1.1); }
+
+footer { text-align:center; padding:2rem; color:var(--muted); border-top:1px solid rgba(255,255,255,.05); position:relative; z-index:1; }
+footer a { color:var(--primary); text-decoration:none; }
+
+#backToTop {
+  position: fixed; bottom:2rem; right:2rem; background:var(--primary); color:#fff;
+  padding:.6rem 1rem; border-radius:50px; cursor:pointer; display:none;
+  box-shadow:0 4px 8px rgba(0,0,0,.3); transition:background .3s; z-index:2;
+}
+#backToTop:hover { background:var(--secondary); }
+
+</style>
+</head>
+<body data-theme="dark">
+
+<canvas id="bgCanvas"></canvas>
+
+<header>
+<h1>Eshan <span>Singh</span></h1>
+<p id="typing"></p>
+<button class="theme-toggle" id="themeToggle">Light Mode</button>
+<nav>
+<a href="#education">Education</a>
+<a href="#experience">Experience</a>
+<a href="#projects">Projects</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section id="education">
+<h2>Education</h2>
+<div class="grid">
+<div class="card">
+<h3>University of Maryland, College Park</h3>
+<p><strong>MS in Data Science</strong> (2025 – 2027)</p>
+<p>GPA: 3.9 / 4.0</p>
+</div>
+<div class="card">
+<h3>Dr. D. Y. Patil Institute of Engineering</h3>
+<p><strong>B.E. in AI & Data Science</strong> (2021 – 2025)</p>
+<p>CGPA: 8.98 / 10 · Honours & Distinction</p>
+</div>
+</div>
+</section>
+
+<section id="experience">
+<h2>Professional Experience</h2>
+<div class="grid">
+<div class="card">
+<h3>Data Science & AIML Engineer Intern</h3>
+<p><em>YBI Foundation</em> · Oct 2024 – Jan 2025</p>
+<p>Built ML pipelines for handwritten digit recognition (KNN, SVM, CNN) and bank churn prediction using Python, TensorFlow, and Scikit‑learn, achieving up to 92% accuracy.</p>
+</div>
+<div class="card">
+<h3>AIML Engineer Intern</h3>
+<p><em>Nexus Info</em> · Dec 2023 – Mar 2024</p>
+<p>Developed an NLP‑based chatbot using Flask & NLTK and engineered a multi‑class disease prediction system using ensemble models.</p>
+</div>
+<div class="card">
+<h3>Data Science Intern</h3>
+<p><em>Codsoft</em> · Aug 2023 – Sep 2023</p>
+<p>Worked on Titanic survival, sales forecasting, and fraud detection with strong focus on evaluation metrics and class imbalance.</p>
+</div>
+</div>
+</section>
+
+<section id="projects">
+<h2>Highlighted Projects</h2>
+<div class="grid">
+<div class="card">
+<h3>Loan Default Risk Prediction (XAI)</h3>
+<p>Gradient Boosting model with LIME‑based explainability for transparent credit risk insights.</p>
+</div>
+<div class="card">
+<h3>Care Compass – Health‑Tech Platform</h3>
+<p>2nd Place, Gemini Hackathon @ UMD. Full‑stack platform with React, Node.js, MongoDB, FHIR, and Google Maps API.</p>
+</div>
+<div class="card">
+<h3>AI‑Driven Career Counselling App</h3>
+<p>Android app with voice interaction, RAG pipelines, clustering, ML models, and published research paper.</p>
+</div>
+</div>
+</section>
+
+<section id="skills">
+<h2>Technical Skills</h2>
+<div class="card">
+<span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Machine Learning</span><span class="tag">Deep Learning</span>
+<span class="tag">NLP</span><span class="tag">RAG</span><span class="tag">LangChain</span><span class="tag">Vector DBs</span>
+<span class="tag">Tableau</span><span class="tag">Power BI</span><span class="tag">Git/GitHub</span><span class="tag">Google Cloud</span>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<div class="card">
+<p>📍 College Park, Maryland, USA</p>
+<p>📧 <a href="mailto:esingh16@umd.edu">esingh16@umd.edu</a></p>
+<p>📞 227‑259‑1592</p>
+</div>
+</section>
+
+<footer>
+<p>© 2025 Eshan Singh · Built with ❤️ and Data</p>
+</footer>
+
+<button id="backToTop">↑ Top</button>
+
+<script>
+  // Typing effect
+  const text = "Data Science & AI Engineer specializing in ML, NLP, RAG, and full-stack AI applications.";
+  let i = 0;
+  const typingEl = document.getElementById('typing');
+  function typeWriter() { if(i<text.length){ typingEl.innerHTML+=text.charAt(i); i++; setTimeout(typeWriter,40);} }
+  typeWriter();
+
+  // Scroll reveal
+  const cards = document.querySelectorAll('.card');
+  const observer = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');}});},{threshold:0.2});
+  cards.forEach(card=>observer.observe(card));
+
+  // Nav active link & Back to Top
+  const sections=document.querySelectorAll("section"); const navLinks=document.querySelectorAll("nav a");
+  window.addEventListener("scroll",()=>{let current=""; sections.forEach(section=>{const top=section.offsetTop;const h=section.clientHeight; if(pageYOffset>=top-h/3)current=section.getAttribute("id");});
+  navLinks.forEach(link=>{link.classList.remove("active"); if(link.getAttribute("href")==="#"+current)link.classList.add("active");});
+  document.getElementById('backToTop').style.display=(window.scrollY>400)?'block':'none';});
+  document.getElementById('backToTop').addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'});});
+
+  // Theme toggle
+  const themeToggle=document.getElementById('themeToggle');
+  themeToggle.addEventListener('click',()=>{if(document.body.dataset.theme==='dark'){document.body.dataset.theme='light'; themeToggle.innerText='Dark Mode';}else{document.body.dataset.theme='dark'; themeToggle.innerText='Light Mode';}});
+
+  // Particle background with interactivity
+  const canvas=document.getElementById('bgCanvas'); const ctx=canvas.getContext('2d');
+  let w=canvas.width=window.innerWidth; let h=canvas.height=window.innerHeight;
+  window.addEventListener('resize',()=>{w=canvas.width=window.innerWidth; h=canvas.height=window.innerHeight;});
+
+  const mouse={x:null,y:null, radius:100};
+  window.addEventListener('mousemove',e=>{mouse.x=e.x; mouse.y=e.y;});
+  window.addEventListener('click',()=>{for(let i=0;i<5;i++){particles.push(new Particle(mouse.x,mouse.y));}});
+
+  const particles=[];
+  const particleCount=80;
+  class Particle{
+    constructor(x=Math.random()*w, y=Math.random()*h){
+      this.x=x; this.y=y; this.radius=Math.random()*2+1;
+      this.speedX=(Math.random()-0.5)*0.5; this.speedY=(Math.random()-0.5)*0.5;
+      this.alpha=Math.random()*0.5+0.2;
+    }
+    draw(){
+      ctx.beginPath(); ctx.arc(this.x,this.y,this.radius,0,Math.PI*2);
+      ctx.fillStyle=`rgba(56,189,248,${this.alpha})`; ctx.fill();
+    }
+    update(){
+      this.x+=this.speedX; this.y+=this.speedY;
+      // repel from mouse
+      if(mouse.x && mouse.y){
+        let dx=this.x-mouse.x; let dy=this.y-mouse.y; let dist=Math.sqrt(dx*dx+dy*dy);
+        if(dist<mouse.radius){ this.x+=dx/dist*1.5; this.y+=dy/dist*1.5; }
+      }
+      if(this.x<0||this.x>w||this.y<0||this.y>h)this.reset();
+      this.draw();
+    }
+    reset(){ this.x=Math.random()*w; this.y=Math.random()*h; this.radius=Math.random()*2+1; this.speedX=(Math.random()-0.5)*0.5; this.speedY=(Math.random()-0.5)*0.5; this.alpha=Math.random()*0.5+0.2; }
+  }
+  for(let i=0;i<particleCount;i++){particles.push(new Particle());}
+  function animate(){ctx.clearRect(0,0,w,h); particles.forEach(p=>p.update()); requestAnimationFrame(animate);}
+  animate();
+</script>
+
+</body>
+</html>
